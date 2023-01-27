@@ -27,6 +27,10 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
+      - run: echo "🔎 The BUCKET_NAME is ${{ env.BUCKET_NAME }}"
+      - run: echo "🔎 The AWS_REGION is ${{ env.AWS_REGION }}"
+      - run: echo "🔎 The DISTRIBUTION_ID is ${{ env.DISTRIBUTION_ID }}"
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
