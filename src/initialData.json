@@ -1,0 +1,86 @@
+[
+    {
+      "name": "宜蘭花蓮車票",
+      "price": 223,
+      "costBy": "All",
+      "payBy": "Kellly"
+    },
+    {
+      "name": "麥當勞",
+      "price": 89,
+      "costBy": "Jin",
+      "payBy": "Kellly"
+    },
+    {
+      "name": "麥當勞",
+      "price": 71,
+      "costBy": "Dong",
+      "payBy": "Kellly"
+    },
+    {
+      "name": "121壽司",
+      "price": 200,
+      "costBy": "Jin",
+      "payBy": "Kellly"
+    },
+    {
+      "name": "121壽司",
+      "price": 190,
+      "costBy": "Dong",
+      "payBy": "Kellly"
+    },
+    {
+      "name": "計程車",
+      "price": 190,
+      "costBy": "All",
+      "payBy": "Jin"
+    },
+    {
+      "name": "油錢",
+      "price": 300,
+      "costBy": "All",
+      "payBy": "Jin"
+    },
+    {
+      "name": "牛奶卡士達",
+      "price": 55,
+      "costBy": "Jin",
+      "payBy": "Kellly"
+    },
+    {
+      "name": "鹹蛋黃",
+      "price": 120,
+      "costBy": "Dong",
+      "payBy": "Kellly"
+    },
+    {
+      "name": "炸雞",
+      "price": 355,
+      "costBy": "All",
+      "payBy": "Kellly"
+    },
+    {
+      "name": "涮乃葉",
+      "price": 1978,
+      "costBy": "All",
+      "payBy": "Kellly"
+    },
+    {
+      "name": "打彈珠",
+      "price": 300,
+      "costBy": "All",
+      "payBy": "Kellly"
+    },
+    {
+      "name": "打彈珠",
+      "price": 300,
+      "costBy": "All",
+      "payBy": "Jin"
+    },
+    {
+      "name": "咖啡",
+      "price": 174,
+      "costBy": "All",
+      "payBy": "Dong"
+    }
+]
