@@ -1,0 +1,58 @@
+name: AA Web Github Actions
+on: 
+  push:
+    branches:
+      - develop
+      - release
+      - main
+env:
+  BUCKET_NAME : "aainfrastructurestack-aawebdc8b53ba-cbu8gp0zf3jkInfo"
+  AWS_REGION : "us-west-2"
+  DISTRIBUTION_ID: "E2AIBQ35O6YBUB"
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: ${{ env.AWS_REGION }}
+          role-to-assume: arn:aws:iam::319960151867:role/AAProject
+          role-session-name: MySessionName
+
+      - name: Check Node
+        run: node --version
+
+      - name: Npm install
+        run: npm install
+      
+      - name: Build production vue dist
+        if: ${{ github.ref_name == 'main' }}
+        run: npm run build && ls dist
+
+      - name: Empty S3 production bucket files
+        if: ${{ github.ref_name == 'main' }}
+        run: aws s3 rm s3://${{ env.BUCKET_NAME }} --recursive
+
+      - name: Deploy to S3 production bucket
+        if: ${{ github.ref_name == 'main' }}
+        run: aws s3 sync dist s3://${{ env.BUCKET_NAME }}
+
+      - name: Invalidate production CloudFront
+        if: ${{ github.ref_name == 'main' }}
+        run: aws cloudfront create-invalidation --distribution-id ${{ env.DISTRIBUTION_ID }} --paths "/index.html"
+
