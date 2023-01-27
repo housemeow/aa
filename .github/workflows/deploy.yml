@@ -6,7 +6,7 @@ on:
       - release
       - main
 env:
-  BUCKET_NAME : "aainfrastructurestack-aawebdc8b53ba-cbu8gp0zf3jkInfo"
+  BUCKET_NAME : "aainfrastructurestack-aawebdc8b53ba-cbu8gp0zf3jk"
   AWS_REGION : "ap-northeast-1"
   DISTRIBUTION_ID: "E2AIBQ35O6YBUB"
 permissions:
