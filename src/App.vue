@@ -252,7 +252,7 @@ const addCostItem = () => {
           </el-table-column>
           <el-table-column prop="payTo" label="Pay To">
             <template #default="scope">
-              <el-row v-for="payTo in scope.row.payTo" :key="payTo.member">
+              <el-row v-for="payTo in scope.row.payTo" :key="payTo.member" class="font-bold">
                 {{ payTo.member }}: {{ formatCurrency(payTo.amount) }}
               </el-row>
             </template>
