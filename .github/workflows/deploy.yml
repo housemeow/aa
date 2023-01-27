@@ -7,7 +7,7 @@ on:
       - main
 env:
   BUCKET_NAME : "aainfrastructurestack-aawebdc8b53ba-cbu8gp0zf3jkInfo"
-  AWS_REGION : "us-west-2"
+  AWS_REGION : "ap-northeast-1"
   DISTRIBUTION_ID: "E2AIBQ35O6YBUB"
 jobs:
   Explore-GitHub-Actions:
@@ -32,7 +32,6 @@ jobs:
         with:
           aws-region: ${{ env.AWS_REGION }}
           role-to-assume: arn:aws:iam::319960151867:role/AAProject
-          role-session-name: MySessionName
 
       - name: Check Node
         run: node --version
