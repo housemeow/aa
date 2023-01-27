@@ -40,6 +40,9 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
           role-to-assume: arn:aws:iam::319960151867:role/AAProject
 
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
       - name: Check Node
         run: node --version
 
